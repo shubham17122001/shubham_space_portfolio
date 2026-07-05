@@ -5,7 +5,7 @@ import Image from "next/image";
 import SectionHeading from "@/components/ui/SectionHeading";
 import GlassPanel from "@/components/ui/GlassPanel";
 import CareerTimeline from "@/components/sections/CareerTimeline";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Award, ExternalLink } from "lucide-react";
 
 export default function About() {
   const skills = [
@@ -111,6 +111,85 @@ export default function About() {
           </GlassPanel>
         </motion.div>
       </div>
+
+      {/* Certifications Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mt-20 pt-12 border-t border-card-border"
+      >
+        <div className="flex items-center gap-3 mb-4">
+          <Award className="text-primary" size={28} />
+          <h3 className="text-3xl font-bold text-foreground">
+            AI & Technical Certifications
+          </h3>
+        </div>
+        <p className="text-muted mb-8 max-w-2xl">
+          Verified credentials demonstrating expertise in large language models, prompt engineering, and API integration.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <GlassPanel hoverEffect className="p-6 md:p-8 flex flex-col justify-between h-full group">
+            <div className="space-y-4">
+              <div className="flex justify-between items-start">
+                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 border border-primary/20 text-primary">
+                  Anthropic
+                </span>
+                <span className="text-xs text-muted font-mono">July 2026</span>
+              </div>
+              <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                Claude Prompt Engineering
+              </h4>
+              <p className="text-sm text-muted leading-relaxed">
+                Advanced certification covering prompt optimization, structural context techniques, system prompts, and structured input-output workflows with the Claude family of models.
+              </p>
+            </div>
+            <div className="mt-8 pt-4 border-t border-card-border/50 flex justify-between items-center">
+              <span className="text-xs text-muted font-mono text-foreground/50">Credential ID: 68te7vr4bkxu</span>
+              <a
+                href="/certificate-68te7vr4bkxu-1783236400.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-medium"
+              >
+                View Certificate
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </GlassPanel>
+
+          <GlassPanel hoverEffect className="p-6 md:p-8 flex flex-col justify-between h-full group">
+            <div className="space-y-4">
+              <div className="flex justify-between items-start">
+                <span className="px-3 py-1 text-xs font-semibold rounded-full bg-primary/10 border border-primary/20 text-primary">
+                  Anthropic
+                </span>
+                <span className="text-xs text-muted font-mono">July 2026</span>
+              </div>
+              <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                API Fundamentals
+              </h4>
+              <p className="text-sm text-muted leading-relaxed">
+                Comprehensive training on Anthropic API integration, covering model selection, parameter tuning, token management, streaming responses, and building structured agentic backend applications.
+              </p>
+            </div>
+            <div className="mt-8 pt-4 border-t border-card-border/50 flex justify-between items-center">
+              <span className="text-xs text-muted font-mono text-foreground/50">Credential ID: 77ujno4ujroa</span>
+              <a
+                href="/certificate-77ujno4ujroa-1783186382.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline font-medium"
+              >
+                View Certificate
+                <ExternalLink size={14} />
+              </a>
+            </div>
+          </GlassPanel>
+        </div>
+      </motion.div>
     </div>
   );
 }
